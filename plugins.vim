@@ -11,6 +11,11 @@ Plug 'tomasr/molokai'
 " Markdown previews
 Plug 'junegunn/vim-xmark'
 
+" FZF - fuzzy finder mapped to ctrl-p
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+nnoremap <C-p> :Files<CR>
+
 " Side-bar file menu
 Plug 'scrooloose/nerdtree'
 nnoremap <Leader>\ :NERDTreeToggle<CR>

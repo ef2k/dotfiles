@@ -31,3 +31,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # Rust package man.
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# FZF
+export PATH="$HOME/.fzf/bin:$PATH"
