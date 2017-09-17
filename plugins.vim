@@ -26,5 +26,8 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 " Comments
 Plug 'tpope/vim-commentary'
 
+" Go
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries'}
+
 " End plugins
 call plug#end()
