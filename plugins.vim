@@ -8,6 +8,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Monokai as colorscheme
 Plug 'tomasr/molokai'
 
+" Markdown previews
+Plug 'junegunn/vim-xmark'
+
 " Side-bar file menu
 Plug 'scrooloose/nerdtree'
 nnoremap <Leader>\ :NERDTreeToggle<CR>
