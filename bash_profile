@@ -34,3 +34,4 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # FZF
 export PATH="$HOME/.fzf/bin:$PATH"
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
