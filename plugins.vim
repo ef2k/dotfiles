@@ -24,8 +24,9 @@ let g:deoplete#enable_at_startup = 1
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries'}
 Plug 'zchee/deoplete-go', { 'do': 'make' }
 
-" Tags
+" Tags use F8 to open it
 Plug 'majutsushi/tagbar'
+nnoremap <F5> :TagbarToggle<CR>
 
 " Comments
 Plug 'tpope/vim-commentary'
