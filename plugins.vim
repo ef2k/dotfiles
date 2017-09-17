@@ -20,11 +20,15 @@ nnoremap <C-p> :Files<CR>
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 let g:deoplete#enable_at_startup = 1
 
-" Comments
-Plug 'tpope/vim-commentary'
-
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries'}
+Plug 'zchee/deoplete-go', { 'do': 'make' }
+
+" Tags
+Plug 'majutsushi/tagbar'
+
+" Comments
+Plug 'tpope/vim-commentary'
 
 " Side-bar file menu
 Plug 'scrooloose/nerdtree'
