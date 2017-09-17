@@ -1,13 +1,15 @@
-Minimalist dotfiles.
+Minimally configured dotfiles.
+<br>
+<br>
 
-Deps:
-- vim-plug
+**Dep**
+- [vim-plug](https://github.com/junegunn/vim-plug)
 
-Includes:
+**For**
 - bash
 - nvim
 
-Symlink:
+**Do**
 
 ```sh
 $ ln -s ~/.config/nvim/init.vim $REPO/init.vim
