@@ -41,7 +41,6 @@ set nowritebackup      " No backups
 set noswapfile         " No swapfile backup
 set history=50         " Shorten history entries
 set nolist
-set completeopt=menu,menuone
 
 " +- UX
 "
@@ -62,6 +61,9 @@ set tabstop=2
 set shiftwidth=2
 set shiftround
 set expandtab
+"
+" Unset the last search pattern, clears the highlight after hitting return
+nnoremap <CR> :noh<CR><CR>
 "
 " Code folding
 set foldmethod=indent
