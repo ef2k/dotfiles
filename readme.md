@@ -1,7 +1,13 @@
 Minimalist dotfiles.
 
-* bash
-* nvim
+Deps:
+- vim-plug
+
+Includes:
+- bash
+- nvim
+
+Symlink:
 
 ```sh
 $ ln -s ~/.config/nvim/init.vim $REPO/init.vim
