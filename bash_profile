@@ -8,7 +8,7 @@ parse_git_branch() {
 }
 
 # Terminal prompt #
-export PS1="💰: (\W) - \[\033[1;33m\]\$(parse_git_branch) \[\033[00m\]$ "
+export PS1='\n\n♙  \W\[\033[1;33m\]$(parse_git_branch)\[\033[00m\]: '
 
 # Setting GOPATH
 export GOPATH=$HOME/Workspace
@@ -20,6 +20,8 @@ alias serve="python -m SimpleHTTPServer"
 alias work="cd ~/Workspace"
 alias src="cd ~/Workspace/src"
 alias other="cd ~/Workspace/other"
+alias v=nvim
+alias v.="nvim ."
 
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 alias chrome-canary="/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary"
@@ -31,6 +33,10 @@ export NVM_DIR="$HOME/.nvm"
 
 # Rust package man.
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Set default editor
+export EDITOR='vim'
+[ -f ~/.bin/tmuxinator.bash ] && source ~/.bin/tmuxinator.bash
 
 # FZF
 export PATH="$HOME/.fzf/bin:$PATH"
