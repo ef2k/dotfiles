@@ -23,9 +23,7 @@ endif
 " Change the map leader
 let mapleader = ","
 "
-colorscheme molokai
-"
-if has("gui_running")
+if has("gui_macvim")
   set guifont=Source\ Code\ Pro:h14
 else
   set termguicolors
@@ -60,7 +58,7 @@ set ttimeoutlen=100
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 " Enable relative line numbers
-set relativenumber
+set norelativenumber
 
 " Only show completion as a list instead of a sub-window
 set completeopt-=preview
