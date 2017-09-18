@@ -1,24 +1,35 @@
 " A minimal configuration of neovim.
 " https://github.com/ef2k/dotfiles
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " +- Set python providers
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 let g:python_host_prog = '/Users/eddie/.pyenv/versions/2.7.11/bin/python'
 let g:python3_host_prog = '/Users/eddie/.pyenv/versions/3.4.4/bin/python'
 
-" Change the map leader to the space bar
-let mapleader="\<Space>"
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " +- Load Plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 if filereadable(expand("~/.config/nvim/plugins.vim"))
   source ~/.config/nvim/plugins.vim
 endif
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " +- Basics
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" Change the map leader
+let mapleader=","
 "
 colorscheme molokai
-set termguicolors
+"
+if has("gui_running")
+  set guifont=Source\ Code\ Pro:h14
+else
+  set termguicolors
+endif
 "
 set linespace=4        " Line height, expects integers
 set nocursorline       " Highlight current line
@@ -41,11 +52,18 @@ set nowritebackup      " No backups
 set noswapfile         " No swapfile backup
 set history=50         " Shorten history entries
 set nolist
+set ttimeout
+set ttimeoutlen=100
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " +- UX
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 " Enable relative line numbers
-set norelativenumber
+set relativenumber
+
+" Only show completion as a list instead of a sub-window
+set completeopt-=preview
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
@@ -80,8 +98,9 @@ nnoremap <Leader>w :w<CR>
 " Remap mistyped q: to quit
 map q: :q
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " +- Key Mappings
-"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Map the ; to :, saves the shift + ; to get :
 nnoremap ; :
 nnoremap : ;

@@ -2,10 +2,15 @@
 " https://github.com/ef2k/dotfiles
 
 " Powered by vim-plug
-call plug#begin('~/.local/share/nvim/plugged')
+if has('nvim')
+  call plug#begin('~/.local/share/nvim/plugged')
+else
+  call plug#begin('~/.vim/plugged')
+endif
 
-" Monokai as colorscheme
+" Colorschemes
 Plug 'tomasr/molokai'
+Plug 'cocopon/iceberg.vim'
 
 " Markdown previews
 Plug 'junegunn/vim-xmark'
@@ -13,27 +18,26 @@ Plug 'junegunn/vim-xmark'
 " FZF - fuzzy finder mapped to ctrl-p
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-let g:fzf_files_options =
-  \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
 nnoremap <C-p> :Files<CR>
 
-" Deocomplete - Autocompletion
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-let g:deoplete#enable_at_startup = 1
-set completeopt-=preview
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<C-h>"
+" Git status
+Plug 'airblade/vim-gitgutter'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" YouCompleteMe
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries'}
+let g:go_fmt_command = 'goimports'
 let g:go_auto_type_info = 1
-"
-" Completions for Go
-Plug 'zchee/deoplete-go', { 'do': 'make' }
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['errcheck', 'vet', 'golint']
+nnoremap <Leader>b :GoBuild<CR>
 
-" Tags use F5 to open it
+" Tagbar of all source symbols
 Plug 'majutsushi/tagbar'
-nnoremap <F5> :TagbarToggle<CR>
+nnoremap <Leader>t :GoBuild<CR>
 
 " Comments
 Plug 'tpope/vim-commentary'
