@@ -21,7 +21,7 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 " Change the map leader
-let mapleader=","
+let mapleader = ","
 "
 colorscheme molokai
 "

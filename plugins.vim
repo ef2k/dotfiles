@@ -37,7 +37,7 @@ nnoremap <Leader>b :GoBuild<CR>
 
 " Tagbar of all source symbols
 Plug 'majutsushi/tagbar'
-nnoremap <Leader>t :GoBuild<CR>
+nnoremap <Leader>t :TagbarToggle<CR>
 
 " Comments
 Plug 'tpope/vim-commentary'
