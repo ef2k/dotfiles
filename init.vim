@@ -24,7 +24,7 @@ endif
 let mapleader = ","
 "
 if has("gui_macvim")
-  set guifont=Source\ Code\ Pro:h14
+  set guifont=Source\ Code\ Pro:h15
 else
   set termguicolors
 endif

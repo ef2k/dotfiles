@@ -11,7 +11,7 @@ endif
 " Colorschemes
 Plug 'tomasr/molokai'
 Plug 'cocopon/iceberg.vim'
-Plug 'endel/vim-github-colorscheme'
+Plug 'ef2k/supralight.vim'
 
 " Markdown previews
 Plug 'junegunn/vim-xmark'
@@ -53,4 +53,4 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 " End plugins
 call plug#end()
 
-colorscheme github 
+colorscheme supralight
