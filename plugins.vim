@@ -8,6 +8,9 @@ else
   call plug#begin('~/.vim/plugged')
 endif
 
+" Auto pairs () [] {}
+Plug 'jiangmiao/auto-pairs'
+
 " Colorschemes
 Plug 'tomasr/molokai'
 Plug 'cocopon/iceberg.vim'
@@ -33,8 +36,10 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries'}
 let g:go_fmt_command = 'goimports'
 let g:go_auto_type_info = 1
 let g:go_metalinter_autosave = 1
-let g:go_metalinter_autosave_enabled = ['errcheck', 'vet', 'golint']
-nnoremap <Leader>b :GoBuild<CR>
+let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
+nnoremap <Leader><S-b> :GoBuild<CR>
+nnoremap <Leader><S-t> :GoTest<CR>
+nnoremap <Leader><S-l> :GoLint<CR>
 
 " Tagbar of all source symbols
 Plug 'majutsushi/tagbar'
