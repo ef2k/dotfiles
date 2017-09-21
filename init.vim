@@ -1,6 +1,9 @@
 " A minimal configuration of neovim.
 " https://github.com/ef2k/dotfiles
 
+" Change the map leader
+let mapleader = "\,"
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " +- Set python providers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -19,9 +22,6 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " +- Basics
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"
-" Change the map leader
-let mapleader = ","
 "
 if has("gui_macvim")
   set guifont=Source\ Code\ Pro:h15
@@ -56,6 +56,9 @@ set ttimeoutlen=100
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " +- UX
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" Always open the quickfix window across the bottom
+au FileType qf wincmd J
 "
 " Enable relative line numbers
 set norelativenumber

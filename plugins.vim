@@ -8,6 +8,9 @@ else
   call plug#begin('~/.vim/plugged')
 endif
 
+" Find and replace
+Plug 'brooth/far.vim'
+
 " Auto pairs () [] {}
 Plug 'jiangmiao/auto-pairs'
 

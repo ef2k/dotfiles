@@ -8,7 +8,7 @@ parse_git_branch() {
 }
 
 # Terminal prompt
-export PS1='\n ☖  \W\[\033[1;33m\]$(parse_git_branch)\[\033[00m\]: '
+export PS1='\n ☖  \W\[\033[1;31m\]$(parse_git_branch)\[\033[00m\]: '
 
 # Setting GOPATH
 export GOPATH=$HOME/Workspace
