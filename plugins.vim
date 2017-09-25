@@ -8,6 +8,10 @@ else
   call plug#begin('~/.vim/plugged')
 endif
 
+" Distraction free writing
+Plug 'junegunn/goyo.vim'
+nnoremap <Leader><S-d> :Goyo<CR>
+
 " Find and replace
 Plug 'brooth/far.vim'
 
@@ -25,6 +29,7 @@ Plug 'junegunn/vim-xmark'
 " FZF - fuzzy finder mapped to ctrl-p
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'
 nnoremap <C-p> :Files<CR>
 
 " Git status
@@ -38,8 +43,9 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries'}
 let g:go_fmt_command = 'goimports'
 let g:go_auto_type_info = 1
-let g:go_metalinter_autosave = 1
-let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_autosave = 0
+let g:go_metalinter_autosave_enabled = ['vet', 'errcheck']
+" :autocmd BufWritePre *.go :GoBuild
 nnoremap <Leader><S-b> :GoBuild<CR>
 nnoremap <Leader><S-t> :GoTest<CR>
 nnoremap <Leader><S-l> :GoLint<CR>
@@ -61,4 +67,4 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 " End plugins
 call plug#end()
 
-colorscheme supralight
+colorscheme molokai 

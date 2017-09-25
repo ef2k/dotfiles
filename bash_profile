@@ -8,13 +8,29 @@ parse_git_branch() {
 }
 
 # Terminal prompt
-export PS1='\n ☖  \W\[\033[1;31m\]$(parse_git_branch)\[\033[00m\]: '
+export PS1='\n\033[0;36m☖ \033[0m \W\[\033[1;31m\]$(parse_git_branch)\[\033[00m\]: '
+
+# function prompt_right() {
+#   echo -e "\033[0;36m\w\033[0m"
+# }
+
+# function prompt_left() {
+#   echo -e "\033[0;35m☖  \033[0m"
+# }
+
+# function prompt() {
+#     compensate=-50
+#     PS1=$(printf "\n%*s\r%s\n\$: " "$(($(tput cols)+${compensate}))" "$(prompt_right)" "$(prompt_left)")
+# }
+# PROMPT_COMMAND=prompt
 
 # Setting GOPATH
 export GOPATH=$HOME/Workspace
 export PATH=$GOPATH/bin:$HOME/bin:$PATH
 
 # Aliases
+alias l="ls"
+alias lah="ls -lah"
 alias reload="source ~/.bash_profile"
 alias serve="python -m SimpleHTTPServer"
 alias work="cd ~/Workspace"
@@ -23,6 +39,7 @@ alias other="cd ~/Workspace/other"
 alias v=nvim
 alias v.="nvim ."
 alias ef2k="cd ~/Workspace/src/github.com/ef2k"
+alias notes="nvim ~/Workspace/notes"
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 alias chrome-canary="/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary"
 
