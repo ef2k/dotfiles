@@ -8,7 +8,7 @@ parse_git_branch() {
 }
 
 # Terminal prompt
-export PS1='\n\033[0;36m☖ \033[0m \W\[\033[1;31m\]$(parse_git_branch)\[\033[00m\]: '
+export PS1='\n☖  \W\[\033[1;31m\]$(parse_git_branch)\[\033[00m\]: '
 
 # function prompt_right() {
 #   echo -e "\033[0;36m\w\033[0m"

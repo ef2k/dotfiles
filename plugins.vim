@@ -59,6 +59,7 @@ Plug 'tpope/vim-commentary'
 
 " Side-bar file menu
 Plug 'scrooloose/nerdtree'
+" let g:NERDTreeSortOrder = map(range(0, 25), '"\\." . nr2char(char2nr("a") + v:val) . "[^.]*$"')
 nnoremap <Leader>\ :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 autocmd StdinReadPre * let s:std_in=1
@@ -67,4 +68,4 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 " End plugins
 call plug#end()
 
-colorscheme molokai 
+colorscheme iceberg
