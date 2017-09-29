@@ -61,7 +61,7 @@ set ttimeoutlen=100
 au FileType qf wincmd J
 "
 " Enable relative line numbers
-set norelativenumber
+set relativenumber
 
 " Only show completion as a list instead of a sub-window
 set completeopt-=preview

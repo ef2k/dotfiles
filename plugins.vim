@@ -12,6 +12,37 @@ endif
 Plug 'junegunn/goyo.vim'
 nnoremap <Leader><S-d> :Goyo<CR>
 
+function! s:goyo_enter()
+  silent !tmux set status off
+  silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
+  set noshowmode
+  set noshowcmd
+  set scrolloff=999
+  set wrap
+  set linebreak
+  nnoremap j gj
+  nnoremap k gk
+  vnoremap j gj
+  vnoremap j gk
+endfunction
+
+function! s:goyo_leave()
+  silent !tmux set status on
+  silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
+  set showmode
+  set showcmd
+  set scrolloff=5
+  set nowrap
+  set nolinebreak
+  nunmap j
+  nunmap k
+  vunmap j
+  vunmap k
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
 " Find and replace
 Plug 'brooth/far.vim'
 
@@ -43,10 +74,10 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries'}
 let g:go_fmt_command = 'goimports'
 let g:go_auto_type_info = 1
-let g:go_metalinter_autosave = 0
-let g:go_metalinter_autosave_enabled = ['vet', 'errcheck']
+" let g:go_metalinter_autosave = 0
+" let g:go_metalinter_autosave_enabled = ['vet', 'errcheck']
 " :autocmd BufWritePre *.go :GoBuild
-nnoremap <Leader><S-b> :GoBuild<CR>
+nnoremap <Leader>b :GoBuild<CR>
 nnoremap <Leader><S-t> :GoTest<CR>
 nnoremap <Leader><S-l> :GoLint<CR>
 

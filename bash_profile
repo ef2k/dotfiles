@@ -8,21 +8,7 @@ parse_git_branch() {
 }
 
 # Terminal prompt
-export PS1='\n☖  \W\[\033[1;31m\]$(parse_git_branch)\[\033[00m\]: '
-
-# function prompt_right() {
-#   echo -e "\033[0;36m\w\033[0m"
-# }
-
-# function prompt_left() {
-#   echo -e "\033[0;35m☖  \033[0m"
-# }
-
-# function prompt() {
-#     compensate=-50
-#     PS1=$(printf "\n%*s\r%s\n\$: " "$(($(tput cols)+${compensate}))" "$(prompt_right)" "$(prompt_left)")
-# }
-# PROMPT_COMMAND=prompt
+export PS1='\n☖  \W$(parse_git_branch): '
 
 # Setting GOPATH
 export GOPATH=$HOME/Workspace
