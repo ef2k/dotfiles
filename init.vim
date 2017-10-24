@@ -81,14 +81,17 @@ set shiftwidth=2
 set shiftround
 set expandtab
 "
-" Unset the last search pattern, clears the highlight after hitting return
-nnoremap <CR> :noh<CR><CR>
-"
 " Code folding
 set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
 set foldlevel=1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" +- Key Mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Unset the last search pattern, clears the highlight after hitting return
+nnoremap <CR> :noh<CR><CR>
 "
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
@@ -96,12 +99,9 @@ nnoremap <leader><leader> <c-^>
 " Faster save
 nnoremap <Leader>w :w<CR>
 "
-" Remap mistyped q: to quit
-map q: :q
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" +- Key Mappings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Faster quit
+nnoremap <Leader>q :q<CR>
+"
 " Map the ; to :, saves the shift + ; to get :
 nnoremap ; :
 nnoremap : ;
@@ -112,8 +112,9 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " +- Language specific
-"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " When editings HBS files always use the handlebars syntax
 au BufRead,BufNewFile *.hbs set filetype=handlebars
 "

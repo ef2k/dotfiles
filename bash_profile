@@ -1,3 +1,5 @@
+alias tmux='tmux -2'
+
 # Add some colors #
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
@@ -8,7 +10,7 @@ parse_git_branch() {
 }
 
 # Terminal prompt
-export PS1='\n☖  \W$(parse_git_branch): '
+export PS1='\n☖  \W \e[1;33m$(parse_git_branch)\e[0m: '
 
 # Setting GOPATH
 export GOPATH=$HOME/Workspace
@@ -44,3 +46,6 @@ export EDITOR='vim'
 # FZF
 export PATH="$HOME/.fzf/bin:$PATH"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Pyenv
+export PATH=$(pyenv root)/shims:$PATH

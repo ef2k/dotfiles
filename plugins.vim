@@ -53,6 +53,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tomasr/molokai'
 Plug 'cocopon/iceberg.vim'
 Plug 'ef2k/supralight.vim'
+Plug 'yuttie/hydrangea-vim'
 
 " Markdown previews
 Plug 'junegunn/vim-xmark'
@@ -76,21 +77,22 @@ let g:go_fmt_command = 'goimports'
 let g:go_auto_type_info = 1
 " let g:go_metalinter_autosave = 0
 " let g:go_metalinter_autosave_enabled = ['vet', 'errcheck']
-" :autocmd BufWritePre *.go :GoBuild
+:autocmd BufWritePre *.go :GoBuild
 nnoremap <Leader>b :GoBuild<CR>
-nnoremap <Leader><S-t> :GoTest<CR>
-nnoremap <Leader><S-l> :GoLint<CR>
+nnoremap <Leader>t :GoTest<CR>
+nnoremap <Leader>l :GoLint<CR>
+
+" HTML
+Plug 'mattn/emmet-vim'
 
 " Tagbar of all source symbols
 Plug 'majutsushi/tagbar'
-nnoremap <Leader>t :TagbarToggle<CR>
 
 " Comments
 Plug 'tpope/vim-commentary'
 
 " Side-bar file menu
 Plug 'scrooloose/nerdtree'
-" let g:NERDTreeSortOrder = map(range(0, 25), '"\\." . nr2char(char2nr("a") + v:val) . "[^.]*$"')
 nnoremap <Leader>\ :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 autocmd StdinReadPre * let s:std_in=1
@@ -99,4 +101,6 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 " End plugins
 call plug#end()
 
-colorscheme iceberg
+colorscheme hydrangea
+highlight ColorColumn ctermbg=7 guibg=#2F2F2F
+
