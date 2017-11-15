@@ -43,6 +43,9 @@ endfunction
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
+" Airline
+Plug 'vim-airline/vim-airline'
+
 " Find and replace
 Plug 'brooth/far.vim'
 
@@ -54,6 +57,7 @@ Plug 'tomasr/molokai'
 Plug 'cocopon/iceberg.vim'
 Plug 'ef2k/supralight.vim'
 Plug 'yuttie/hydrangea-vim'
+Plug 'rakr/vim-one'
 
 " Markdown previews
 Plug 'junegunn/vim-xmark'
@@ -61,7 +65,8 @@ Plug 'junegunn/vim-xmark'
 " FZF - fuzzy finder mapped to ctrl-p
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf.vim'
+let $FZF_DEFAULT_COMMAND = 'ag -g "" --ignore "vendor/*"'
+'
 nnoremap <C-p> :Files<CR>
 
 " Git status
@@ -101,6 +106,12 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 " End plugins
 call plug#end()
 
-colorscheme hydrangea
+" colorscheme hydrangea
+
+" colorscheme one
+" let g:one_allow_italics = 1
+set background=dark
+
+colorscheme molokai
 highlight ColorColumn ctermbg=7 guibg=#2F2F2F
 
