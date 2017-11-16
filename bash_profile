@@ -1,8 +1,8 @@
 alias tmux='tmux -2'
 
 # Add some colors #
-export CLICOLOR=1
-export LSCOLORS=GxFxCxDxBxegedabagaced
+#export CLICOLOR=1
+#export LSCOLORS=GxFxCxDxBxegedabagaced
 
 # Git branch in prompt #
 parse_git_branch() {
@@ -26,6 +26,7 @@ alias src="cd ~/Workspace/src"
 alias other="cd ~/Workspace/other"
 alias v=nvim
 alias v.="nvim ."
+alias vim=nvim
 alias ef2k="cd ~/Workspace/src/github.com/ef2k"
 alias notes="nvim ~/Workspace/notes"
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
