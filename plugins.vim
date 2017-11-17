@@ -1,5 +1,10 @@
 " A minimal configuration of plugins for neovim.
 " https://github.com/ef2k/dotfiles
+"
+" Install vim-plug:
+"
+" curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+" https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 " Powered by vim-plug
 if has('nvim')
@@ -54,10 +59,6 @@ Plug 'jiangmiao/auto-pairs'
 
 " Colorschemes
 Plug 'tomasr/molokai'
-Plug 'cocopon/iceberg.vim'
-Plug 'ef2k/supralight.vim'
-Plug 'yuttie/hydrangea-vim'
-Plug 'rakr/vim-one'
 
 " Markdown previews
 Plug 'junegunn/vim-xmark'
@@ -78,11 +79,11 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries'}
-let g:go_fmt_command = 'goimports'
-let g:go_auto_type_info = 1
+" let g:go_fmt_command = 'goimports'
+" let g:go_auto_type_info = 1
 " let g:go_metalinter_autosave = 0
 " let g:go_metalinter_autosave_enabled = ['vet', 'errcheck']
-:autocmd BufWritePre *.go :GoBuild
+" :autocmd BufWritePre *.go :GoBuild
 nnoremap <Leader>b :GoBuild<CR>
 nnoremap <Leader>t :GoTest<CR>
 nnoremap <Leader>l :GoLint<CR>
@@ -106,12 +107,5 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 " End plugins
 call plug#end()
 
-" colorscheme hydrangea
-
-" colorscheme one
-" let g:one_allow_italics = 1
-set background=dark
-
 colorscheme molokai
-highlight ColorColumn ctermbg=7 guibg=#2F2F2F
-
+" highlight ColorColumn ctermbg=7 guibg=#2F2F2F

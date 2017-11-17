@@ -26,11 +26,8 @@ alias src="cd ~/Workspace/src"
 alias other="cd ~/Workspace/other"
 alias v=nvim
 alias v.="nvim ."
-alias vim=nvim
 alias ef2k="cd ~/Workspace/src/github.com/ef2k"
 alias notes="nvim ~/Workspace/notes"
-alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
-alias chrome-canary="/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary"
 
 # Node version manager
 export NVM_DIR="$HOME/.nvm"
@@ -49,4 +46,11 @@ export PATH="$HOME/.fzf/bin:$PATH"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # Pyenv
-export PATH=$(pyenv root)/shims:$PATH
+export PYENV_ROOT="$(brew --prefix pyenv)"
+export PYTHON_CONFIGURE_OPTS="--enable-framework"
+export CFLAGS="-I$(brew --prefix openssl)/include"
+export LDFLAGS="-L$(brew --prefix openssl)/lib"
+export PATH=$PYENV_ROOT/shims:$PATH
+
+# Rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi

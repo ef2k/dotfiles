@@ -8,8 +8,8 @@ let mapleader = "\,"
 " +- Set python providers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
-let g:python_host_prog = '/Users/eddie/.pyenv/versions/2.7.11/bin/python'
-let g:python3_host_prog = '/Users/eddie/.pyenv/versions/3.4.4/bin/python'
+let g:python_host_prog ='/usr/local/opt/pyenv/versions/2.7.11/bin/python'
+let g:python3_host_prog = '/usr/local/opt/pyenv/versions/3.4.4/bin/python'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " +- Load Plugins
@@ -23,12 +23,8 @@ endif
 " +- Basics
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
-if has("gui_macvim")
-  set guifont=Source\ Code\ Pro:h15
-else
-  set termguicolors
-endif
-"
+set termguicolors
+
 set linespace=4        " Line height, expects integers
 set nocursorline       " Highlight current line
 set nojoinspaces       " Use one space after punctuation.
