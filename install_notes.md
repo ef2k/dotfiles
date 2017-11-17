@@ -56,6 +56,12 @@ gem install neovim
 brew cask install docker google-chrome cyberduck
 ```
 
+### Fonts
+
+First: `brew tap caskroom/fonts`
+
+- Source Code Pro - `brew cask install source-code-pro`
+
 ### Setting up Golang
 
 - go `brew install go --cross-compile-common`
