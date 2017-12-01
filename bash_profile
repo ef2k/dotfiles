@@ -1,16 +1,12 @@
 alias tmux='tmux -2'
 
-# Add some colors #
-#export CLICOLOR=1
-#export LSCOLORS=GxFxCxDxBxegedabagaced
-
 # Git branch in prompt #
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
 # Terminal prompt
-export PS1='\n☖  \W \e[1;33m$(parse_git_branch)\e[0m: '
+export PS1='\n☖  \W$(parse_git_branch): '
 
 # Setting GOPATH
 export GOPATH=$HOME/Workspace
@@ -28,6 +24,7 @@ alias v=nvim
 alias v.="nvim ."
 alias ef2k="cd ~/Workspace/src/github.com/ef2k"
 alias notes="nvim ~/Workspace/notes"
+alias YT="cd ~/Music/YT"
 
 # Node version manager
 export NVM_DIR="$HOME/.nvm"
