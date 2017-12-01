@@ -59,6 +59,7 @@ Plug 'jiangmiao/auto-pairs'
 
 " Colorschemes
 Plug 'tomasr/molokai'
+Plug 'rakr/vim-one'
 
 " Markdown previews
 Plug 'junegunn/vim-xmark'
@@ -108,4 +109,7 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 call plug#end()
 
 colorscheme molokai
+" let g:one_allow_italics = 1
+" set background=dark
+" colorscheme one
 " highlight ColorColumn ctermbg=7 guibg=#2F2F2F
