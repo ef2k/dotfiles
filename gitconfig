@@ -1,7 +1,7 @@
 # This is Git's per-user configuration file.
 [user]
-	name = Eddie Flores 
-	email = eddflrs@gmail.com
+	name = Eddie Flores
+	email = ef2k@users.noreply.github.com
 	username = ef2k
 [core]
 	editor = vim

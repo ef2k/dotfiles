@@ -60,6 +60,10 @@ Plug 'jiangmiao/auto-pairs'
 " Colorschemes
 Plug 'tomasr/molokai'
 Plug 'rakr/vim-one'
+Plug 'cocopon/iceberg.vim'
+
+" Dash integration
+Plug 'rizzatti/dash.vim'
 
 " Markdown previews
 Plug 'junegunn/vim-xmark'
@@ -80,7 +84,7 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries'}
-" let g:go_fmt_command = 'goimports'
+let g:go_fmt_command = 'goimports'
 " let g:go_auto_type_info = 1
 " let g:go_metalinter_autosave = 0
 " let g:go_metalinter_autosave_enabled = ['vet', 'errcheck']
@@ -89,14 +93,23 @@ nnoremap <Leader>b :GoBuild<CR>
 nnoremap <Leader>t :GoTest<CR>
 nnoremap <Leader>l :GoLint<CR>
 
+" JS
+Plug 'pangloss/vim-javascript'
+
 " HTML
 Plug 'mattn/emmet-vim'
+
+" Handlebars
+Plug 'joukevandermaas/vim-ember-hbs'
 
 " Tagbar of all source symbols
 Plug 'majutsushi/tagbar'
 
 " Comments
 Plug 'tpope/vim-commentary'
+
+" Surround
+Plug 'tpope/vim-surround'
 
 " Side-bar file menu
 Plug 'scrooloose/nerdtree'
@@ -108,7 +121,8 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 " End plugins
 call plug#end()
 
-colorscheme molokai
+" colorscheme molokai
+colorscheme iceberg
 " let g:one_allow_italics = 1
 " set background=dark
 " colorscheme one

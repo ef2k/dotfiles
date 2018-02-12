@@ -14,9 +14,10 @@ export PATH=$GOPATH/bin:$HOME/bin:$PATH
 
 # Aliases
 alias l="ls"
+alias ls="ls -F"
 alias lah="ls -lah"
 alias reload="source ~/.bash_profile"
-alias serve="python -m SimpleHTTPServer"
+alias serve="python -m http.server"
 alias work="cd ~/Workspace"
 alias src="cd ~/Workspace/src"
 alias other="cd ~/Workspace/other"
@@ -25,6 +26,9 @@ alias v.="nvim ."
 alias ef2k="cd ~/Workspace/src/github.com/ef2k"
 alias notes="nvim ~/Workspace/notes"
 alias YT="cd ~/Music/YT"
+
+# Increase history entries
+export HISTSIZE=2000
 
 # Node version manager
 export NVM_DIR="$HOME/.nvm"
@@ -51,3 +55,6 @@ export PATH=$PYENV_ROOT/shims:$PATH
 
 # Rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# git-completion.bash
+source /usr/local/etc/bash_completion.d/git-completion.bash
