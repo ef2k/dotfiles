@@ -4,6 +4,6 @@
 	email = ef2k@users.noreply.github.com
 	username = ef2k
 [core]
-	editor = vim
+	editor = nvim
 
 
