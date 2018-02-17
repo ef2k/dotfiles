@@ -63,7 +63,7 @@ First: `brew tap caskroom/fonts`
 ### Setting up Golang
 
 - go `brew install go --cross-compile-common`
-- godep `go get github.com/tools/godep`
+- dep `brew install dep`
 
 ### Neovim
 
