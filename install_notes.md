@@ -30,10 +30,8 @@
 
 ```
 pyenv install 2.7.11
-pyenv install 3.4.4
-# install neovim in 2 via pip2 install neovim
-# install neovim in 3 via pip2 install neovim
 pip2 install neovim
+pyenv install 3.4.4
 pip3 install neovim
 ```
 
@@ -66,6 +64,14 @@ First: `brew tap caskroom/fonts`
 
 - go `brew install go --cross-compile-common`
 - godep `go get github.com/tools/godep`
+
+### Neovim
+
+Install vim-plug:
+```
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
 
 ## Security
 
