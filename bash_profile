@@ -19,6 +19,7 @@ alias lah="ls -lah"
 alias reload="source ~/.bash_profile"
 alias serve="python -m http.server"
 alias work="cd ~/Workspace"
+alias sites="cd ~/Workspace/sites"
 alias src="cd ~/Workspace/src"
 alias other="cd ~/Workspace/other"
 alias v=nvim
@@ -39,8 +40,11 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # Set default editor
-export EDITOR='vim'
+export EDITOR='nvim'
 [ -f ~/.bin/tmuxinator.bash ] && source ~/.bin/tmuxinator.bash
+
+# git-completion.bash
+source /usr/local/etc/bash_completion.d/git-completion.bash
 
 # FZF
 export PATH="$HOME/.fzf/bin:$PATH"
@@ -56,5 +60,3 @@ export PATH=$PYENV_ROOT/shims:$PATH
 # Rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-# git-completion.bash
-source /usr/local/etc/bash_completion.d/git-completion.bash
