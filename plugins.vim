@@ -68,7 +68,7 @@ Plug 'rizzatti/dash.vim'
 " Markdown previews
 Plug 'junegunn/vim-xmark'
 
-" FZF - fuzzy finder mapped to ctrl-p
+" FZF - fuzzy finder mapped to ctrl-P
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 let $FZF_DEFAULT_COMMAND = 'ag -g "" --ignore "vendor/*"'
@@ -79,8 +79,18 @@ nnoremap <C-p> :Files<CR>
 Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
-" YouCompleteMe
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+" Deocomplete with Go support
+Plug 'Shougo/deoplete.nvim'
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+" neocomplete like
+set completeopt+=noinsert
+" deoplete.nvim recommend
+set completeopt+=noselect
+" Run deoplete.nvim automatically
+let g:deoplete#enable_at_startup = 1
+" deoplete-go settings
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries'}
@@ -110,6 +120,10 @@ Plug 'tpope/vim-commentary'
 
 " Surround
 Plug 'tpope/vim-surround'
+
+" Preview subs before doing them
+Plug 'osyo-manga/vim-over'
+nnoremap <leader>s :OverCommandLine<CR> %s/<C-r><C-w>/
 
 " Side-bar file menu
 Plug 'scrooloose/nerdtree'
