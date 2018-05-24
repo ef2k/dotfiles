@@ -1,5 +1,12 @@
 alias tmux='tmux -2'
 
+# Setting GOPATH
+export GOPATH=$HOME/Workspace
+export PATH=$GOPATH/bin:$HOME/bin:$PATH
+
+# Fix for sed 'illegal byte sequence' error
+export LC_ALL=C
+
 # Git branch in prompt #
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -7,10 +14,6 @@ parse_git_branch() {
 
 # Terminal prompt
 export PS1='\n☖  \W$(parse_git_branch): '
-
-# Setting GOPATH
-export GOPATH=$HOME/Workspace
-export PATH=$GOPATH/bin:$HOME/bin:$PATH
 
 # Aliases
 alias l="ls"
