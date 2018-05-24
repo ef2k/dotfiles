@@ -86,13 +86,21 @@ Plug 'zchee/deoplete-go', { 'do': 'make'}
 set completeopt+=noinsert
 " deoplete.nvim recommend
 set completeopt+=noselect
+
 " Run deoplete.nvim automatically
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+
 " deoplete-go settings
 let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 
+" Vue
+Plug 'posva/vim-vue'
+let g:vue_disable_pre_processors=1
+
 " Go
+Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries'}
 let g:go_fmt_command = 'goimports'
 " let g:go_auto_type_info = 1
