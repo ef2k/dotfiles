@@ -11,6 +11,11 @@
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   ```
 
+Install all brew dependencies from Brewfile:
+```sh
+brew bundle
+```
+
 ### Installed via brew
 
 - Cask - `brew tap caskroom/cask`
