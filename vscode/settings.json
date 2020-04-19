@@ -1,0 +1,25 @@
+{
+    "go.formatTool": "goimports",
+    "go.useLanguageServer": true,
+    "editor.fontFamily": "Source Code Pro",
+    "workbench.colorTheme": "Monokai ST3",
+    "window.zoomLevel": 1,
+    "editor.fontSize": 14,
+    "editor.lineNumbers": "relative",
+    "editor.minimap.enabled": false,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "prettier.trailingComma": "all",
+    "prettier.singleQuote": true,
+    "editor.formatOnSave": true,
+    "sass.lint.enable": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.tabSize": 2,
+    "explorer.confirmDragAndDrop": false,
+    "workbench.editor.showTabs": false,
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.showIcons": false,
+    "explorer.openEditors.visible": 1,
+    "breadcrumbs.icons": false
+}
