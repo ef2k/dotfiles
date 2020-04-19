@@ -21,5 +21,6 @@
     "workbench.editor.enablePreview": false,
     "workbench.editor.showIcons": false,
     "explorer.openEditors.visible": 1,
-    "breadcrumbs.icons": false
+    "breadcrumbs.icons": false,
+    "workbench.activityBar.visible": false
 }
