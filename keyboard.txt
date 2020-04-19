@@ -1,0 +1,8 @@
+Fn+9 Mute
+Fn+10 VolumeUp
+Fn+11 VolumeDown
+Fn+12 Lock
+Fn+PrtSc BrightnessDown
+Pause BrightnessUp
+
+
