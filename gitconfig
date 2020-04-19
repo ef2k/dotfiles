@@ -11,4 +11,9 @@
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
+  process = git-lfs filter-process
+
+[alias]
+  s = status -s
+  b = branch
+  co = checkout
