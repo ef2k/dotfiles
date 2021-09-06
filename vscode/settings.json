@@ -2,7 +2,7 @@
     "go.formatTool": "goimports",
     "go.useLanguageServer": true,
     "editor.fontFamily": "Source Code Pro",
-    "workbench.colorTheme": "Monokai ST3",
+    "workbench.colorTheme": "Tokyo Night",
     "window.zoomLevel": 1,
     "editor.fontSize": 14,
     "editor.lineNumbers": "relative",
