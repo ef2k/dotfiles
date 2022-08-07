@@ -1,35 +1,35 @@
-// Place your key bindings in this file to override the defaultsauto[]
+// Place your key bindings in this file to override the default// Place your key bindings in this file to override the defaultsauto[]
 [
-  {
-    "key": "shift+cmd+v",
-    "command": "workbench.action.splitEditor"
-  },
-  {
-    "key": "cmd+\\",
-    "command": "-workbench.action.splitEditor"
-  },
-  {
-    "key": "shift+cmd+x",
-    "command": "workbench.action.splitEditorOrthogonal"
-  },
-  {
-    "key": "cmd+k cmd+\\",
-    "command": "-workbench.action.splitEditorOrthogonal"
-  },
-  {
-    "key": "ctrl+h",
-    "command": "workbench.action.navigateLeft"
-  },
-  {
-    "key": "ctrl+k",
-    "command": "workbench.action.navigateUp"
-  },
-  {
-    "key": "ctrl+j",
-    "command": "workbench.action.navigateDown"
-  },
-  {
-    "key": "ctrl+l",
-    "command": "workbench.action.navigateRight"
-  }
-]
+    {
+      "key": "shift+cmd+v",
+      "command": "workbench.action.splitEditor"
+    },
+    {
+      "key": "cmd+\\",
+      "command": "-workbench.action.splitEditor"
+    },
+    {
+      "key": "shift+cmd+x",
+      "command": "workbench.action.splitEditorOrthogonal"
+    },
+    {
+      "key": "cmd+k cmd+\\",
+      "command": "-workbench.action.splitEditorOrthogonal"
+    },
+    {
+      "key": "cmd+h",
+      "command": "workbench.action.navigateLeft"
+    },
+    {
+      "key": "cmd+k",
+      "command": "workbench.action.navigateUp"
+    },
+    {
+      "key": "cmd+j",
+      "command": "workbench.action.navigateDown"
+    },
+    {
+      "key": "cmd+l",
+      "command": "workbench.action.navigateRight"
+    }
+  ]
