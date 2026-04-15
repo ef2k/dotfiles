@@ -1,20 +1,26 @@
-Minimally configured dotfiles.
-<br>
-<br>
+# dotfiles
 
-**Dep**
-- [vim-plug](https://github.com/junegunn/vim-plug)
-
-**For**
-- bash
-- nvim
-
-**Do**
+## Install
 
 ```sh
-$ ln -s ~/.config/nvim/init.vim $REPO/init.vim
-$ ln -s ~/.config/nvim/plugins.vim $REPO/plugins.vim
-$ ln -s ~/.bash_profile $REPO/bash_profile
+make install
 ```
 
-[Install Notes](install_notes.md)
+## Dependencies
+
+- [oh-my-zsh](https://ohmyz.sh) — handled by `make install`
+- [vim-plug](https://github.com/junegunn/vim-plug) — install manually:
+
+```sh
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+## Brew
+
+All dependencies are managed via `Brewfile`. To install:
+
+```sh
+brew bundle
+```
+
