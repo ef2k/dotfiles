@@ -4,7 +4,7 @@ DOTFILES := $(shell pwd)
 
 install: brew nvim
 	ln -sf $(DOTFILES)/bash_profile $(HOME)/.bash_profile
-	ln -sf $(DOTFILES)/gitconfig $(HOME)/.gitconfig
+	ln -sf $(DOTFILES)/git/gitconfig $(HOME)/.gitconfig
 	@echo "Done."
 
 brew:
@@ -12,5 +12,5 @@ brew:
 
 nvim:
 	mkdir -p $(HOME)/.config/nvim
-	ln -sf $(DOTFILES)/init.vim $(HOME)/.config/nvim/init.vim
-	ln -sf $(DOTFILES)/plugins.vim $(HOME)/.config/nvim/plugins.vim
+	ln -sf $(DOTFILES)/nvim/init.vim $(HOME)/.config/nvim/init.vim
+	ln -sf $(DOTFILES)/nvim/plugins.vim $(HOME)/.config/nvim/plugins.vim
