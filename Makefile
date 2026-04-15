@@ -1,10 +1,18 @@
 DOTFILES := $(shell pwd)
+UNAME    := $(shell uname)
 
 .PHONY: install brew nvim zsh omz
 
-install: brew omz nvim zsh
+install:
+ifeq ($(UNAME), Darwin)
+	$(MAKE) brew
+endif
+	$(MAKE) omz nvim zsh
 	ln -sf $(DOTFILES)/git/gitconfig $(HOME)/.gitconfig
 	@echo "Done."
+
+brew:
+	brew bundle --file=$(DOTFILES)/Brewfile
 
 omz:
 	@if [ ! -d "$(HOME)/.oh-my-zsh" ]; then \
@@ -13,6 +21,10 @@ omz:
 		echo "oh-my-zsh already installed, skipping."; \
 	fi
 
+nvim:
+	mkdir -p $(HOME)/.config/nvim
+	ln -sf $(DOTFILES)/nvim/init.lua $(HOME)/.config/nvim/init.lua
+
 zsh:
 	@if ! grep -q "# dotfiles" $(HOME)/.zshrc; then \
 		cat $(DOTFILES)/zsh/zshrc >> $(HOME)/.zshrc; \
@@ -20,10 +32,3 @@ zsh:
 	else \
 		echo "zsh config already present, skipping."; \
 	fi
-
-brew:
-	brew bundle --file=$(DOTFILES)/Brewfile
-
-nvim:
-	mkdir -p $(HOME)/.config/nvim
-	ln -sf $(DOTFILES)/nvim/init.lua $(HOME)/.config/nvim/init.lua
