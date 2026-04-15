@@ -1,5 +1,3 @@
-alias tmux='tmux -2'
-
 # Setting GOPATH
 export GOPATH=$HOME/Workspace
 export PATH=$GOPATH/bin:$HOME/bin:$PATH
@@ -44,8 +42,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # Set default editor
 export EDITOR='nvim'
-[ -f ~/.bin/tmuxinator.bash ] && source ~/.bin/tmuxinator.bash
-
 # git-completion.bash
 source /usr/local/etc/bash_completion.d/git-completion.bash
 
