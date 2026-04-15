@@ -26,5 +26,4 @@ brew:
 
 nvim:
 	mkdir -p $(HOME)/.config/nvim
-	ln -sf $(DOTFILES)/nvim/init.vim $(HOME)/.config/nvim/init.vim
-	ln -sf $(DOTFILES)/nvim/plugins.vim $(HOME)/.config/nvim/plugins.vim
+	ln -sf $(DOTFILES)/nvim/init.lua $(HOME)/.config/nvim/init.lua

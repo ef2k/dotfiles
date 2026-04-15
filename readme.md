@@ -4,9 +4,4 @@
 make install
 ```
 
-After installing, set up [vim-plug](https://github.com/junegunn/vim-plug):
-
-```sh
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-```
+Neovim plugins are managed by [lazy.nvim](https://github.com/folke/lazy.nvim) and will self-install on first launch.
