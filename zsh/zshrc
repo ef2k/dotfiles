@@ -9,7 +9,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases
 alias gits="git s"
-alias work="cd ~/work/aerity"
+alias work="cd ~/work"
 
 # Path
 export PATH=$HOME/bin:$HOME/go/bin:$HOME/.local/bin:/usr/local/bin:$PATH
