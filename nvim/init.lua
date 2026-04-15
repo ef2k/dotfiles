@@ -62,15 +62,15 @@ require("lazy").setup({
 
   -- Colorscheme
   {
-    "cocopon/iceberg.vim",
+    "folke/tokyonight.nvim",
     priority = 1000,
-    config = function() vim.cmd.colorscheme("iceberg") end,
+    config = function() vim.cmd.colorscheme("tokyonight-night") end,
   },
 
   -- Status line
   {
     "nvim-lualine/lualine.nvim",
-    opts = { options = { theme = "iceberg_dark" } },
+    opts = { options = { theme = "tokyonight-night" } },
   },
 
   -- File tree
