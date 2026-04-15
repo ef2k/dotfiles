@@ -11,6 +11,10 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = ","
 
+-- Disable netrw in favor of nvim-tree
+vim.g.loaded_netrw       = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Options
 local opt = vim.opt
 opt.termguicolors  = true
@@ -72,8 +76,19 @@ require("lazy").setup({
   -- File tree
   {
     "nvim-tree/nvim-tree.lua",
-    keys = { { "<leader>\\", "<cmd>NvimTreeToggle<CR>" } },
-    opts = {},
+    lazy = false,
+    keys = { { "<leader>e", "<cmd>NvimTreeToggle<CR>" } },
+    config = function()
+      require("nvim-tree").setup()
+      vim.api.nvim_create_autocmd("VimEnter", {
+        callback = function(data)
+          if vim.fn.isdirectory(data.file) == 1 then
+            vim.cmd.cd(data.file)
+            require("nvim-tree.api").tree.open()
+          end
+        end,
+      })
+    end,
   },
 
   -- Fuzzy finder
@@ -87,30 +102,30 @@ require("lazy").setup({
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
+    event = "BufReadPost",
     config = function()
-      require("nvim-treesitter.configs").setup({
+      local ok, configs = pcall(require, "nvim-treesitter.configs")
+      if not ok then return end
+      configs.setup({
         ensure_installed = { "go", "javascript", "typescript", "lua", "html" },
         highlight = { enable = true },
-        indent   = { enable = true },
+        indent    = { enable = true },
       })
     end,
   },
 
-  -- LSP server installer
+  -- LSP server installer + native LSP (Neovim 0.11+)
   { "williamboman/mason.nvim", opts = {} },
   {
     "williamboman/mason-lspconfig.nvim",
-    opts = { ensure_installed = { "gopls", "ts_ls" } },
-  },
-
-  -- LSP
-  {
-    "neovim/nvim-lspconfig",
+    dependencies = { "hrsh7th/cmp-nvim-lsp" },
     config = function()
-      local lspconfig    = require("lspconfig")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
-      lspconfig.gopls.setup({ capabilities = capabilities })
-      lspconfig.ts_ls.setup({ capabilities = capabilities })
+      vim.lsp.config("*", { capabilities = capabilities })
+      require("mason-lspconfig").setup({
+        ensure_installed  = { "gopls", "ts_ls" },
+        automatic_enable  = true,
+      })
     end,
   },
 
