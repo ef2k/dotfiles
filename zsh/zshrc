@@ -1,0 +1,18 @@
+# dotfiles
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME="robbyrussell"
+
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+# Aliases
+alias gits="git s"
+alias work="cd ~/work/aerity"
+
+# Path
+export PATH=$HOME/bin:$HOME/go/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+
+# Editor
+export EDITOR='nvim'
