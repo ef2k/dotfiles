@@ -5,7 +5,8 @@ unfocused-split-opacity=0.5
 cursor-style = block
 font-family = "Monaco"
 font-size = 16
-theme=tokyonight_night
+
+theme = TokyoNight
 
 keybind = super+r=clear_screen
 keybind = super+shift+x=new_split:down
@@ -15,3 +16,4 @@ keybind = super+k=goto_split:up
 keybind = super+h=goto_split:left
 keybind = super+l=goto_split:right
 
+keybind = shift+enter=text:\x1b\r
