@@ -44,6 +44,24 @@ opt.foldenable     = false
 opt.foldlevel      = 1
 opt.completeopt    = { "menu", "menuone", "noselect" }
 
+-- Writing mode for prose files like Markdown.
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "markdown", "text", "gitcommit" },
+  callback = function()
+    vim.opt_local.wrap = true
+    vim.opt_local.linebreak = true
+    vim.opt_local.textwidth = 80
+    vim.opt_local.formatoptions:append("t")
+    vim.opt_local.spell = true
+    vim.opt_local.colorcolumn = "80"
+
+    local opts = { buffer = true, silent = true }
+    vim.keymap.set("n", "<leader>fp", "gqap", opts)
+    vim.keymap.set("n", "<leader>fP", "gggqG", opts)
+    vim.keymap.set("x", "<leader>fp", "gq", opts)
+  end,
+})
+
 -- Keymaps
 local map = vim.keymap.set
 map("n", "<CR>",           ":noh<CR><CR>")
