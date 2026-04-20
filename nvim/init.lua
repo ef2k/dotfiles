@@ -59,6 +59,11 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.keymap.set("n", "<leader>fp", "gqap", opts)
     vim.keymap.set("n", "<leader>fP", "gggqG", opts)
     vim.keymap.set("x", "<leader>fp", "gq", opts)
+
+    local ok, cmp = pcall(require, "cmp")
+    if ok then
+      cmp.setup.buffer({ enabled = false })
+    end
   end,
 })
 
