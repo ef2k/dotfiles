@@ -54,10 +54,11 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.formatoptions:append("t")
     vim.opt_local.spell = true
     vim.opt_local.colorcolumn = "80"
+    vim.opt_local.relativenumber = false
 
     local opts = { buffer = true, silent = true }
     vim.keymap.set("n", "<leader>fp", "gqap", opts)
-    vim.keymap.set("n", "<leader>fP", "gggqG", opts)
+    vim.keymap.set("n", "<leader>F", "gggqG", opts)
     vim.keymap.set("x", "<leader>fp", "gq", opts)
 
     local ok, cmp = pcall(require, "cmp")

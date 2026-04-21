@@ -26,9 +26,5 @@ nvim:
 	ln -sf $(DOTFILES)/nvim/init.lua $(HOME)/.config/nvim/init.lua
 
 zsh:
-	@if ! grep -q "# dotfiles" $(HOME)/.zshrc; then \
-		cat $(DOTFILES)/zsh/zshrc >> $(HOME)/.zshrc; \
-		echo "Appended zsh config."; \
-	else \
-		echo "zsh config already present, skipping."; \
-	fi
+	ln -sf $(DOTFILES)/zsh/zshrc $(HOME)/.zshrc
+	@echo "Symlinked zsh config."
