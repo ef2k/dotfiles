@@ -78,6 +78,8 @@ map("n", "<C-j>",          "<C-w>j")
 map("n", "<C-k>",          "<C-w>k")
 map("n", "<C-h>",          "<C-w>h")
 map("n", "<C-l>",          "<C-w>l")
+map("x", "<leader>y",      "\"+y")
+map("n", "<leader>Y",      "gg\"+yG")
 
 -- Plugins
 require("lazy").setup({
