@@ -12,7 +12,7 @@ alias gits="git s"
 alias work="cd ~/work"
 
 # Path
-export PATH=$HOME/bin:$HOME/go/bin:$HOME/.local/bin:$HOME/work/depot_tools:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/go/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Editor
 export EDITOR='nvim'
