@@ -9,14 +9,11 @@ source $ZSH/oh-my-zsh.sh
 
 autoload -Uz add-zsh-hook
 
-_cmd_entered_at=""
-
-_record_command_time() {
-  _cmd_entered_at="$(date +%H:%M)"
+_show_command_timestamp() {
+  print -P "%F{8}%D{%H:%M:%S}%f"
 }
 
-add-zsh-hook preexec _record_command_time
-RPROMPT='${_cmd_entered_at}'
+add-zsh-hook preexec _show_command_timestamp
 
 # Aliases
 alias gits="git s"
