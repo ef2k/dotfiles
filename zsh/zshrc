@@ -9,11 +9,16 @@ source $ZSH/oh-my-zsh.sh
 
 autoload -Uz add-zsh-hook
 
-_show_command_timestamp() {
-  print -P "%F{8}%D{%H:%M:%S}%f"
+_show_command_start_timestamp() {
+  print -P "%F{8}start %D{%H:%M:%S}%f"
 }
 
-add-zsh-hook preexec _show_command_timestamp
+_show_command_end_timestamp() {
+  print -P "%F{8}end   %D{%H:%M:%S}%f"
+}
+
+add-zsh-hook preexec _show_command_start_timestamp
+add-zsh-hook precmd _show_command_end_timestamp
 
 # Aliases
 alias gits="git s"
